@@ -49,7 +49,7 @@ function installAsterisk {
 }
 function installAsteriskConfigs {
     output "Installing official Asterisk config samples..."
-    yum install asterisk-configs -y
+    yum install asterisk-configs --enablerepo=asterisk-13 -y
     output "Done installing config samples via package."
 }
 function loadConfig {
