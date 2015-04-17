@@ -71,7 +71,7 @@ function loadConfig {
 }
 function prepInstall {
     output "Installing dependencies and repos..."
-    yum install vim dnsmasq epel-release -y && yum install pwgen --enablerepo=epel -y && yum update --enablerepo=asterisk-13 --disablerepo=epel -y
+    yum install dnsmasq epel-release -y && yum install pwgen --enablerepo=epel -y && yum remove epel-release -y && yum update --enablerepo=asterisk-13 -y
     rpm -Uvh http://packages.asterisk.org/centos/6/current/i386/RPMS/asterisknow-version-3.0.1-3_centos6.noarch.rpm
     output "Done installing dependencies and repos; updated all system packages."
 }
